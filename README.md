@@ -1,4 +1,4 @@
-# DVA270 - Inbyggda System och Programutveckling på NRF5340 DK
+# Programmering för inbyggda system, DVA270
 
 Detta repository används i kursen **DVA270 - Inbyggda System** för att samla och bygga studenters spelutvecklingsuppgifter baserade på **Nordic Semiconductor NRF5340 DK**.
 
