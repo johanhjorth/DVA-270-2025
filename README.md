@@ -4,7 +4,7 @@ Detta repository används i kursen **DVA270 - Inbyggda System** för att samla o
 
 ## Översikt
 
-I kursen har vi övat på:
+I kursen har vi bland annat övat på:
 - Att använda utvecklingsmiljö och verktyg för programmering av inbyggda system
 - Att felsöka och testa inbyggd mjukvara
 - Introducerat git och versionshantering
