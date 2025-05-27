@@ -5,7 +5,6 @@
 #include <nrfx_bsdriver.h>
 #include <assert.h>
 #include <stdio.h>
-#include <Daniel_GPIO.h> //Ni behöver alltså inte inkludera er egna UARTE write, förutsätt att det finns en uarte_write, uarte_init osv osv
 
 // Standardiserad inkludering av alla gruppers headerfiler
 #include "grupp1.h"
