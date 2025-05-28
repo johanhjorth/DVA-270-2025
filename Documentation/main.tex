@@ -1,0 +1,80 @@
+\documentclass[conference]{IEEEtran}
+% Include all packages from file.
+% Report template for Mälardalen University
+% Original template can be found: 
+% https://www.overleaf.com/latex/templates/ieee-bare-demo-template-for-conferences/ypypvwjmvtdf
+% Template file structure organised by: Emil Persson
+% The following packages should follow the IEEE conference guidelines.
+
+% Swedish language package 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% Graphics
+\usepackage{graphicx, float, subfigure, blindtext}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning, calc}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1cm, minimum height=0.5cm,text centered, draw=black, fill=red!30,node font=\scriptsize]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=0.5cm, text centered, draw=black, fill=blue!30,node font=\scriptsize]
+\tikzstyle{process} = [rectangle, minimum width=1cm, minimum height=0.5cm, text centered,text width=1.2cm, draw=black, fill=orange!30,node font=\scriptsize]
+\tikzstyle{decision} = [diamond, minimum width=0.5cm, minimum height=0.5cm, text centered,text width=1.1cm, draw=black, fill=green!30,node font=\scriptsize]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\newcommand\IEEEhyperrefsetup{
+bookmarks=true,bookmarksnumbered=true,%
+colorlinks=true,linkcolor={black},citecolor={black},urlcolor={black}%
+}
+
+% Preferred hyperref setup, Michael Shell
+\usepackage[\IEEEhyperrefsetup, pdftex]{hyperref}
+
+% Maths
+\usepackage{mathtools}
+
+% These packages must be at the end
+\usepackage[nolist,nohyperlinks]{acronym}
+\usepackage{cleveref}
+\graphicspath{{images/}}
+
+% Remove section first paragraph indent
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{*1}{*1}
+\titlespacing*{\subsection}{0pt}{*1}{*1}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\titleformat{\subsubsection}[runin]{\itshape}{\thesubsubsection)}{1em}{}[:]
+\titlespacing*{\subsubsection}{\parindent}{0pt}{*1}
+
+% Include authors 
+\author{\IEEEauthorblockN{ %
+Joel Näktergal\IEEEauthorrefmark{1},
+Student Two\IEEEauthorrefmark{2}, 
+}
+\IEEEauthorblockA{
+School of Innovation, Design and, Engineering\\
+Mälardalens University, Västerås, Sweden\\
+Email:
+\IEEEauthorrefmark{1}jbl23002@student.mdu.se, 
+\IEEEauthorrefmark{2}studenttwo@student.mdh.se
+}}
+
+% ACRONYMS: \acrodef{acronym}[short name]{full name}
+\acrodef{svm}[SVM]{Support Vector Machine}
+
+% The report title.
+\title{IEEEtran Technical Reports Template\\
+Mälardalen University}
+% Document begins here
+\begin{document}
+% Create the title.
+\maketitle
+% Example sections, name them
+% according to specific needs.
+\input{sections/introduction}
+\input{sections/documentation}
+% Select the IEEEtran style
+\bibliographystyle{IEEEtran}
+% Include bibliography file
+\bibliography{IEEEabrv,refs}
+\end{document}
