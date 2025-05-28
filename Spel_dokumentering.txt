@@ -1,0 +1,14 @@
+Spelets mål: 
+	1. Att jaga den andra "*" innan den flyttar på sig.
+		1.1 Hinner du till punkten innan den flyttar på sig så får du poäng och sedan flyttar punkten på sig.
+		1.2 Om du inte hinnter till punkten innan den flyttar på sig så kommer att minska antalet försök du har på dig med 1.
+		1.3 Vid 10 misslyckade försök så är spelet slut.
+	2. Ju snabbare du är med att fånga punkten desto fler poäng kan du akkumulera innan du får "game-over"
+		
+
+Speltangenter: 
+	p ; "pausar spelet", 
+	i ; "flyttar din position ett stet uppåt", 
+	j ; "flyttar din position ett steg åt vänster", 
+	k ; "flyttar din position ett steg nedåt",
+	l ; "flyttar din position ett steg åt höger".
