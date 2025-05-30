@@ -1,5 +1,4 @@
 #include "grupp4.h"
-#include <nrfx_rtc.h> 
 
 const nrfx_rtc_t rtc_instance = NRFX_RTC_INSTANCE(0);
 nrfx_uarte_t uarte_instance = NRFX_UARTE_INSTANCE(0); 
