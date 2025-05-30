@@ -39,38 +39,32 @@ The Number Catcher Game is a RNG reaction game where you need to wait for your n
 
 ## System
 
-architecture-beta
-    group api(logos:aws-lambda)[API]
+### Keyboard
+- Inputs to game
+### PuTTY
+- UART communication
+### nRF card
+- Processing inputs
+- Sending outputs
+- Running logics
 
-    service db(logos:aws-aurora)[Database] in api
-    service disk1(logos:aws-glacier)[Storage] in api
-    service disk2(logos:aws-s3)[Storage] in api
-    service server(logos:aws-ec2)[Server] in api
+```flow
+st=>start: Login
+op=>operation: Login operation
+cond=>condition: Successful Yes or No?
+e=>end: To admin
 
-    db:L -- R:server
-    disk1:T -- B:server
-    disk2:T -- B:db
-    
-```mermaid
-graph system;
-    Keyboard-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+st->op->cond
+cond(yes)->e
+cond(no)->op
 ```
 
-[Tangentbord]
-     │ (tangenttryckning via USB)
-     ▼
-     [PC med PuTTY]
-     │ (UART via USB-CDC)
-     ▼
-   [nRF5340DK]
-     │
-     ├── Tar emot input via UART
-     ├── Skriver ANSI-grafik till PuTTY
-     └── Kör spel-logik i C
-
+```seq
+Andrew->China: Says Hello 
+Note right of China: China thinks\nabout it 
+China-->Andrew: How are you? 
+Andrew->>China: I am good thanks!
+```
 
 ## Contact
 Any questions just talk to Johannes or Angelina in class.
