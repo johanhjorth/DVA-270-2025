@@ -14,5 +14,5 @@ Spelet körs simpelet via en knapptryckning (antigen på kortet eller tangentbor
 
 
 >**Lore**
-Adventure of Globbo takes place in the year 2125 after a deadly virus, , wiped out 80% of humanity. In the wake of the apocalypse a megacorperation by the name of _Little Brother_ took over the world. They made new laws and forced the survivors to obey. Punishment for broken laws became to have your contiousness transferd into a slime. 
+Adventure of Globbo takes place in the year 2125 after a deadly virus, Jaeger, wiped out 80% of humanity. In the wake of the apocalypse a megacorperation by the name of _Little Brother_ took over the world. They made new laws and forced the survivors to obey. Punishment for broken laws became to have your contiousness transferd into a slime. 
 You are Globbo. An anarchist who got caught when trying to topple Little Brother. You were turned into a slime but that wouldn't stop you. Escaping the prison of your test tube, you're hopping through the broken sewers fighting gravity to make your way to a freedom you'll never reach.
