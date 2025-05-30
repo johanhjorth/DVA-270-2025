@@ -37,34 +37,62 @@ The Snake Game is a snake that grows and grows inside a rectangle. Try to make t
 
 The Number Catcher Game is a RNG reaction game where you need to wait for your number to appear, and then react by pushing a key to stop it.
 
-## System
+## The technicals
 
-### Keyboard
+### System parmeters
+```
+[Keyboard]
 - Inputs to game
-### PuTTY
+
+[PuTTY]
 - UART communication
-### nRF card
+
+[nRF card]
 - Processing inputs
 - Sending outputs
 - Running logics
-
-```flow
-st=>start: Login
-op=>operation: Login operation
-cond=>condition: Successful Yes or No?
-e=>end: To admin
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
 ```
 
-```seq
-Andrew->China: Says Hello 
-Note right of China: China thinks\nabout it 
-China-->Andrew: How are you? 
-Andrew->>China: I am good thanks!
+### Code
 ```
+start_game_grupp4()
+    initialize INTERUPTS
+    initialize TIMERS
+    initialize UART // PuTTY communication
+
+    LOOP PLAYFIELD_MATRIX
+        IF is_border 1
+        else 0
+    
+    print SNAKE_IMAGE_SCREEN
+    wait KEYPRESS
+
+    //SNAKE GAME
+    print PLAYGFIELD
+    print PLAYER
+    WHILE not_collided && not_esc_key:
+        move_direction PLAYER
+        check_collided
+        wait DELAY
+        on_keypress:
+            change_direction PLAYER
+        
+    show_points SNAKE
+    wait KEYPRESS
+
+    //NUMBER CATCHER
+    print TARGET_RND_NUM
+    WHILE not_esc_key:
+        print CURRENT_RND_NUM
+        on_keypress:
+            IF correct_num:
+                print "Bra jobbat!"
+            ELSE
+                print "FAIL!"
+    
+    print "Hej då!"
+```
+
 
 ## Contact
 Any questions just talk to Johannes or Angelina in class.
