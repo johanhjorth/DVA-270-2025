@@ -1,0 +1,93 @@
+Laboration 4 - DVA270 - Grupp 2
+
+-----------------------------------------------------------
+
+
+Hur man spelar spelet:
+
+Användaren startar spelet samt varje runda genom att trycka på knapp 1 på nRF5340DK kortet. 
+Därefter kommer LED´sen att blinka slumpat fyra gånger. 
+Användaren ska så snabbt som möjligt efter sista lampan slocknat trycka på motsvarande knapp på det numeriska tangentbordet följt av retur. 
+Använd knapparna 4, 5, 1 och 2. Detta kan låta förvirrande men det ska vara motsvarande positioner om du har nRF5340DK kortet framför dig, 4 motsvarar LED 1, 5 - 2, 1 - 3, 2 - 4. 
+Tiden börjar när sista lampan slocknat och stannar efter retur tryckts ned. 
+Nu ser användaren sin egen tid för just den omgången och bästa tid, vill användaren så sitt rekord tryck på knapp 1 osv.
+
+-----------------------------------------------------------
+
+
+Systemöverblick – Blockdiagram:
+
+Tangentbord -> PC -> UART -> nRF5340DK -> UART -> PC
+
+-----------------------------------------------------------
+
+Hur spelet är implementerat i kod - Pseudokod:
+
+(start)
+print("Press button 1")
+
+while(button1 is not pressed){}
+
+srand(time from button1)
+
+random_array(arrRand)
+{
+	array med fyra platser som fylls med slumpade tal mellan 1 och 4
+}
+
+lit_leds_in_order(arrRand)
+{
+	for(genom arrRand plats för plats)
+	{
+		if(arrRand[i] == 1)
+			lit_led(LED 1)
+		else if(arrRand[i] == 2)
+			lit_led(LED 2)
+		else if(arrRand[i] == 3)
+			lit_led(LED 3)
+		else if(arrRand[i] == 4)
+			lit_led(LED 4)
+	}
+}
+
+lit_led(int led)
+{
+	turn on LED
+	wait for 300ms
+	turn off LED
+}
+
+print("entar last LED")
+
+Starta Interupt
+
+run_timer()
+{
+	timer som printar 100 ms år gången
+}
+
+väntar på knapptryck
+
+uarte_handler(...)
+{
+	if(button is pressed)
+	{
+		if(right button is pressed)
+		{
+			stop_timer()
+			bestTime = yourTime
+			print("Your time: " + time)
+			print("Best time: " + best_time)
+			print("Press button 1 to play again")
+		}
+		else if(wrong button is pressed)
+		{
+			print("Wrong LED")
+			print("Press button 1 to play again")
+		}
+	}
+	else if(button is not pressed)
+	{
+		wait...
+	}
+}	
