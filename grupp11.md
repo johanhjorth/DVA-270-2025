@@ -11,6 +11,7 @@ Spelet körs simpelet via en knapptryckning (antigen på kortet eller tangentbor
 ![](grupp11_block_diagram_(system).png)
 
 **Flödesschema för spelets implementation**
+![](grupp11_flow_chart.png)
 
 
 >**Lore**
