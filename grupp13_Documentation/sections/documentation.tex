@@ -1,0 +1,51 @@
+%**********************start*{How to play}*section**********************%
+\section{How to play}%
+\label{sec:how_to_play}
+
+%**********************start*{Controls}*subsection**********************%
+\subsection{Controls}%
+\label{sub:controls}
+\begin{itemize}
+    \item p ; "pauses the game"
+    \item i ; "moves the player position one step upwards"
+    \item k ; "moves the player position one step downwards"
+    \item j ; "moves the player position one step to the left"
+    \item l ; "moves the player position one step to the right"
+\end{itemize}
+%------------------------end-{Controls}-subsection-----------------------%
+
+%**********************start*{Goal of the game}*subsection**********************%
+\subsection{Goal of the game}%
+\label{sub:goal_of_the_game}
+\begin{enumerate}
+    \item To hunt the other "*" before it moves.
+        \begin{enumerate}
+            \item If you make it to its position before it moves, you get a point. The position of the score then changes.
+            \item If you are unable to do not make it to the its position before the time runs out, then it will move and the number of tries will be reduced by one.
+            \item Once you have missed to catch it 10 times; the game will end.
+        \end{enumerate}
+\end{enumerate}
+%------------------------end-{Goal of the game}-subsection-----------------------%
+%**********************start*{System overview}*subsection**********************%
+\subsection{System overview}%
+\label{sub:system_overview}
+\begin{tikzpicture}[]
+    \node[process] (keyboard) {keyboard};
+    \node[io,right=of keyboard] (usbprotocol) {usb protocol};
+    \node[io,below=of usbprotocol] (hdmiprotocol) {HDMI -or display port protocol};
+    \node[process,below=of keyboard] (screen) {Screen};
+    \node[process,xshift=20mm] (pc) at ($(usbprotocol.east)!0.5!(hdmiprotocol.east)$) {PC};
+    \node[io,below=of pc] (uarte) {UARTE protocol};
+    \node[process,below=of uarte] (nrf5340dk) {nrf5340DK};
+
+    \draw[arrow] (keyboard) -- (usbprotocol.west);
+    \draw[arrow] (usbprotocol.east) -- (pc.north west);
+    \draw[arrow] (pc.south west) -- (hdmiprotocol.east) ;
+    \draw[arrow] (hdmiprotocol) -- (screen);
+    \draw[arrow] ($(pc.south west)!0.5!(pc.south)$) -- (uarte.north west) ;
+    \draw[arrow] (uarte.north east) -- ($(pc.south east)!0.5!(pc.south)$);
+    \draw[arrow] (uarte.south west) -- ($(nrf5340dk.north west)!0.5!(nrf5340dk.north)$);
+    \draw[arrow] ($(nrf5340dk.north east)!0.5!(nrf5340dk.north)$) -- (uarte.south east);
+\end{tikzpicture}
+%------------------------end-{System overview}-subsection-----------------------%
+%------------------------end-{How to play}-section-----------------------%
